@@ -16,9 +16,10 @@ library(tidyverse)
 
 ```{r}
 ## create the data frame "hw1_df"
+set.seed(3)
 hw1_df =
   tibble(
-    sample = rnorm(10),
+    sample = rnorm(10, mean = 0, sd = 1),
     gr_than_0 = sample > 0,
     vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
     vec_factor = factor(c(1, 1, 2, 3, 3, 3, 2, 3, 1, 3), 
