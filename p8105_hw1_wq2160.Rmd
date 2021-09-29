@@ -69,3 +69,33 @@ as.numeric(hw1_df$vec_factor)
 #### The variable type of "sample" and "logical vector" could be converted, the "character factor" could not be converted because it is nominal data. As for "factor vector", I defined it as numeric factor so it could be converted to numbers here; but if I denined it as "male", "female", and "prefer not to say", then it could NOT be converted and the output will be "NA".
 
 #### Another thing about the "factor vector" is that: Why the mean of vec_factor could not be calculated but it could be converted to numbers. My explanition is: in the data frame, I defined vec_factor using `c()`, so even the factors are actually numbers, they are not considered as numbers by R (they are considered more like "text"). But because they are really numbers, they could be converted to numbers using `as.numeric` function. 
+
+
+### Problem 2
+```{r}
+## load "penguins" dataset
+data("penguins", package = "palmerpenguins")
+```
+
+#### Write a short description of the `penguins` dataset:
+```{r}
+## show the dataset
+penguins
+## names of important variables
+names(penguins)
+## the size of dataset
+dim(penguins)
+nrow(penguins)
+ncol(penguins)
+## the mean of flipper length
+mean(penguins$flipper_length_mm, na.rm = T)
+```
+
+#### Make a scatterplot of `flipper_length_mm` vs `bill_length_mm` 
+```{r warning = FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) +
+  geom_point(aes(color = species)) +
+  ggtitle("Bill Length vs Flipper Length")
+```
+
+
