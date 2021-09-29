@@ -98,4 +98,10 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) +
   ggtitle("Bill Length vs Flipper Length")
 ```
 
+#### Save the plot
+```{r message = FALSE, warning = FALSE, eval = FALSE}
+ggsave("hw1_scatterplot.pdf")
+```
+
+
 
